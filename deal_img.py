@@ -51,14 +51,14 @@ def spilt_img(img):
 
     return img_list
 
-
-for i in os.listdir(rootdir):
-    if os.path.isfile(os.path.join(rootdir, i)):
-        file_name = os.path.join(rootdir, i)
-        image = Image.open(file_name)
-        img = change_to_grey(image)
-        # img.save(save_patg + "\\" + i, "PNG")
-        img_list = spilt_img(img)
-        for j in img_list:
-            j.save("E:\img\gz_fund\lib" + "\\" + str(num) + ".png", "PNG")
-            num = num + 1
+if __name__ == '__main__':
+    for i in os.listdir(rootdir):
+        if os.path.isfile(os.path.join(rootdir, i)):
+            file_name = os.path.join(rootdir, i)
+            image = Image.open(file_name)
+            img = change_to_grey(image)
+            # img.save(save_patg + "\\" + i, "PNG")
+            img_list = spilt_img(img)
+            for j in img_list:
+                j.save("E:\img\gz_fund\lib" + "\\" + str(num) + ".png", "PNG")
+                num = num + 1
