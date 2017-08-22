@@ -1,5 +1,5 @@
-import urllib.request;
-import urllib.parse;
+import urllib.request
+import urllib.parse
 import rk
 import json
 
@@ -19,28 +19,30 @@ def verify_img(data, type):
     return result
 
 
-username = "****"
-password = "****"
-soft_id = "****"
-soft_key = "****"
+username = "johnnydeng"
+password = "mucfc_2015"
+soft_id = "40798"
+soft_key = "5fd36c10e636461caca22138fd05affa"
 url = "https://gzgjj.gov.cn/wsywgr/CheckAction!createYZM.action"
 rc = rk.RClient(username=username, password=password.encode("utf-8"), soft_id=soft_id, soft_key=soft_key)
 
-for i in range(0, 100):
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
-                             'Chrome/51.0.2704.63 Safari/537.36',
-               "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
-               "Accept-Encoding": "gzip, deflate, br",
-               "Accept-Language": "zh-CN,zh;q=0.8",
-               "Cache-Control": "max-age=0",
-               "Connection": "keep-alive",
-               "Host": "gzgjj.gov.cn",
-               "Referer": "https://gzgjj.gov.cn/wsywgr/",
-               "Upgrade-Insecure-Requests": "1"}
-    req = urllib.request.Request(url=url, headers=headers)
+if __name__ == '__main__':
 
-    res = urllib.request.urlopen(req)
+    for i in range(0, 150):
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
+                                 'Chrome/51.0.2704.63 Safari/537.36',
+                   "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+                   "Accept-Encoding": "gzip, deflate, br",
+                   "Accept-Language": "zh-CN,zh;q=0.8",
+                   "Cache-Control": "max-age=0",
+                   "Connection": "keep-alive",
+                   "Host": "gzgjj.gov.cn",
+                   "Referer": "https://gzgjj.gov.cn/wsywgr/",
+                   "Upgrade-Insecure-Requests": "1"}
+        req = urllib.request.Request(url=url, headers=headers)
 
-    data = res.read()
-    result = verify_img(data, 3040)
-    save_img(data, "E:\\img\\gz_fund\\" + result + ".png")
+        res = urllib.request.urlopen(req)
+
+        data = res.read()
+        result = verify_img(data, 3040)
+        save_img(data, "E:\\img\\gz_fund\\" + result + ".png")
