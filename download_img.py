@@ -19,10 +19,10 @@ def verify_img(data, type):
     return result
 
 
-username = "johnnydeng"
-password = "mucfc_2015"
-soft_id = "40798"
-soft_key = "5fd36c10e636461caca22138fd05affa"
+username = "****"
+password = "****"
+soft_id = "****"
+soft_key = "****"
 url = "https://gzgjj.gov.cn/wsywgr/CheckAction!createYZM.action"
 rc = rk.RClient(username=username, password=password.encode("utf-8"), soft_id=soft_id, soft_key=soft_key)
 
