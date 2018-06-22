@@ -11,3 +11,4 @@ gen
 .idea/
 __pycache__/
 verify.iml
+/chineserec/chinese/
